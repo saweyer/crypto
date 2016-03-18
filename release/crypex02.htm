@@ -1,0 +1,329 @@
+<!--crypex02.htm -->
+<HTML><HEAD>
+<!--<BASE HREF="http://members.bellatlantic.net/~sweyer/newton/crypto/crypex02.htm">-->
+<TITLE>Crypto Examples 02</TITLE>
+<META NAME="ISBN"		CONTENT="crypex02.htm">
+<META NAME="AUTHOR"		CONTENT="Steve Weyer">
+<META NAME="SHORTTITLE" CONTENT="CrypEx02">
+<META NAME="COPYRIGHT" 	CONTENT="&copy; 1997-98. S. Weyer. All Rights Reserved Worldwide">
+
+<META NAME="data.isbn"	CONTENT="isbn"> <!-- from book, for use inside method -->
+
+<META NAME="data.protoFlash"
+CONTENT="{					/*a user prototype*/
+	_proto: @183, 			/*protoGlance*/
+	viewBounds: RelBounds(0,0,180,120),
+	viewJustify: 2+4+16+64, /*vjCenterH + vjCenterV + vjParentCenterH + vjParentCenterV*/
+	ReOrientToScreen: @588, /*ROM_DefRotateFunc* -- in case try to open in landscape on 2.x*/
+	}">
+
+<META NAME="data.crypactn.htm"
+CONTENT="func(submitobj,title,url,data)						/*a local 'CGI'*/
+begin
+	local subField := data.submitBut;
+	local fieldNum := SubStr(subField, CharPos(subField,$ ,0)+1, nil);
+	local answer := data.(Intern(&quot;Ans&quot; &amp; fieldNum));	/*AnsNN hidden field*/
+	if BeginsWith(subField, &quot;Answer&quot;)	
+	then begin 												/*Answer button pressed*/
+		if StrFilled(answer)
+		then BuildContext({									/*flash answer temporarily*/
+			_proto: protoFlash,
+			text: subField &amp; $\n &amp; answer,
+			}):open();										/*auto closes*/
+		end
+
+	else begin												/*Cryto button pressed*/
+		GetRoot().copperfield:close();						/*close book*/
+		GetRoot().|Crypto:TKnollSys|:?newCode(				/*open Crypto with...*/
+			isbn &amp;&amp; $# &amp; fieldNum,				/*title: 	crypex02.htm #NN*/
+			nil,											/*text: 	empty*/
+			data.(Intern(&quot;Puz&quot; &amp; fieldNum)),	/*code: 	PuzNN*/
+			answer											/*answer:	AnsNN*/
+			);
+		end;
+	NIL;													/*don't automatically Reset*/
+end">
+</HEAD><BODY>
+
+<H1>Sample Puzzles</H1>
+
+<P>
+Here are some test puzzles in a <A HREF="../cryptdoc.htm#FormFormat">form-oriented file format</A>.
+Let me know of typos, solutions, or other puzzles...
+
+<P>
+On Newton, tap on Crypto button to load Crypto with the puzzle (and answer if available);
+tap on Answer button to display answer temporarily.
+
+<P>
+For viewing .htm version in Newt's Cape, I recommend Options:Appearance:H1 &amp; H2:Above:Top.
+
+<FORM ACTION="crypactn.htm" METHOD="POST">
+
+<H2>Puzzle 1</H2>
+<TEXTAREA NAME="Puz01" WRAP=ON ROWS=3 COLS=72>D KFG F YXCDPL XJJDZM SXY. D ZEMFPMG IKM ADPGXAB DP IKM MPRMEXVMB. - CDIF CNGPMC.
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans01" VALUE="I had a boring office job. I cleaned the windows in the envelopes. - Rita Rudner.">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 01">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 01">
+
+
+<H2>Puzzle 2</H2>
+<TEXTAREA NAME="Puz02" WRAP=ON ROWS=3 COLS=72>NPLCCA FN RLZOZ JCK IC SZMRZZV RLZV JCKO TYOZVMN PYV'M MYWZ JCK YVU FVUKNMOJ PYV'M MYWZ JCK. - XCLV KTUFWZ.
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans02" VALUE="School is where you go between when your parents can't take you and industry can't take you. - John Updike.">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 02">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 02">
+
+
+<H2>Puzzle 3</H2>
+<TEXTAREA NAME="Puz03" WRAP=ON ROWS=3 COLS=72>JYAB OWPOE, XPO ZVWCYK BWWYW. - AYJOVLWB. LO LT XF MYWSLALKS OEVO YKB LT MYWSLABK. - GYOEBW OBWBTV
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans03" VALUE="Love truth, but pardon error. - Voltaire. It is by forgiving that one is forgiven. - Mother Teresa">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 03">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 03">
+
+
+<H2>Puzzle 4</H2>
+<TEXTAREA NAME="Puz04" WRAP=ON ROWS=3 COLS=72>E LJO'K UBND ABPRD KDDKU. LJ XJY KUEOM E'L IYX KDDKU PEMD KUDRD? - SBZJP IYZODKK
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans04" VALUE="I don't have false teeth. Do you think I'd buy teeth like these? - Carol Burnett">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 04">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 04">
+
+
+<H2>Puzzle 5</H2>
+<TEXTAREA NAME="Puz05" WRAP=ON ROWS=3 COLS=72>FP EWO ZFGK OMNKMBK VJP PCKFT CWBY MB NU OCMJZYKT WBY OMTP ML DJFYKY NK PCTMJDC. - (PCK NWOPKTO EFBBKT) AKB HTKBOCWE
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans05" VALUE="It was like someone put their hand on my shoulder and sort of guided me through. - (The Masters winner) Ben Crenshaw">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 05">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 05">
+
+
+<H2>Puzzle 6</H2>
+<TEXTAREA NAME="Puz06" WRAP=ON ROWS=3 COLS=72>CNHD'OH BFC VK KVMMFVSXHX YBYRS, CNH GFFM UYKCYMXK. - BHS. LMYRBNCFS J. YUMYTK, FS JFMIX JYM RR UYCCIH FP CNH UVIBH
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans06" VALUE="They've got us surrounded again, the poor bastards. - Gen. Craighton W. Abrams, on World War II Battle of the Bulge">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 06">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 06">
+
+
+<H2>Puzzle 7</H2>
+<TEXTAREA NAME="Puz07" WRAP=ON ROWS=3 COLS=72>PDEFBMEF BVFG'OO XMZF L NLJ LHS HDTDSG NMOO UDEF. - ULJO PLHSTWJX. NLJ PFBBOFP HDBVMHX. - SNMXVB S. FMPFHVDNFJ
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans07" VALUE="Sometime they'll give a war and nobody will come. - Carl Sandburg. War settles nothing - Dwight D. Eisenhower">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 07">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 07">
+
+
+<H2>Puzzle 8</H2>
+<TEXTAREA NAME="Puz08" WRAP=ON ROWS=3 COLS=72>THB JHZAB IPNJH RPHW RHZGP. - DHBHGZ. RPH VANEPRHA WLF ZAH RPH TLAH WLF PZSH RL JHZAB. - OLB PHALJO
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans08" VALUE="Men learn while they teach. - Seneca. The brighter you are the more you have to learn. - Don Herold">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 08">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 08">
+
+
+<H2>Puzzle 9</H2>
+<TEXTAREA NAME="Puz09" WRAP=ON ROWS=3 COLS=72>J CJHX NW NIJN EL GJE N UJWZXI NU RXIGXOECA NU N VXCC-ENJCLIXF UMJE LG OCLEPXU. - VLCGZNWZ NKNFXMU
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans09" VALUE="I like an aria to fit a singer as perfectly as a well-tailored suit of clothes. - Wolfgang Amadeus">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 09">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 09">
+
+
+<H2>Puzzle 10</H2>
+<TEXTAREA NAME="Puz10" WRAP=ON ROWS=3 COLS=72>RPN AICN RXCN RPIR HDCNJ GICN VO HXRP OCA, CNJ GICN VO HXRP NAOJ.
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans10" VALUE="The same time that women came up with PMS, men came up with ESPN.">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 10">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 10">
+
+
+
+<H2>Puzzle 11</H2>
+<TEXTAREA NAME="Puz11" WRAP=ON ROWS=3 COLS=72>P EMPXD SDAVFRD P UVYD XN EMPXD. PB JNXUPJH NB TPJD EVR DYDM CMNKFADK VHVPJ, P'K RXPWW EMPXD. - UNMXNJ BNNXD
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans11" VALUE="I write because I have to write. If nothing of mine was ever produced again, I'd still write. - Horton Foote">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 11">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 11">
+
+
+<H2>Puzzle 12</H2>
+<TEXTAREA NAME="Puz12" WRAP=ON ROWS=3 COLS=72>DEZTZ RTZ XZLZTRJ ANNB FTNDZODYNIX RARYIXD DZHFDRDYNIX WPD DEZ XPTZXD YX ONKRTBYOZ. - HRTG DKRYI
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans12" VALUE="There are several good protections against temptations but the surest is cowardice. - Mark Twain">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 12">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 12">
+
+
+<H2>Puzzle 13</H2>
+<TEXTAREA NAME="Puz13" WRAP=ON ROWS=3 COLS=72>G'NX TIVTRP WCLOXH HDVO TUWGOS FDAP AXYDLX G KTH WKX PWTWCP PCMMDPXHIR OXXHXH WD WCLO WKXJ HDVO. - FTPDO MTWLGU
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans13" VALUE="I've always turned down acting jobs before I had the status supposedly needed to turn them down. - Jason Patric">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 13">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 13">
+
+
+<H2>Puzzle 14</H2>
+<TEXTAREA NAME="Puz14" WRAP=ON ROWS=3 COLS=72>PLOIWUZZK YI IZ WLIR, MAGMU IZ KYPPYBGOM. - EWZAEW WOYZM
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans14" VALUE="Falsehood is so easy, truth so difficult. - George Eliot">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 14">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 14">
+
+
+<H2>Puzzle 15</H2>
+<TEXTAREA NAME="Puz15" WRAP=ON ROWS=3 COLS=72>Y REH ES XDEXRD XDZWYXA MZEHD LD ESS, FCH T MYA ICAH VEZLYJH ... JEH VDYV. - YYZEJ AXDRRTJU
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans15" VALUE="A lot of people perhaps wrote me off, but I was just dormant ... not dead. - Aaron Spelling">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 15">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 15">
+
+
+<H2>Puzzle 16</H2>
+<TEXTAREA NAME="Puz16" WRAP=ON ROWS=3 COLS=72>HDWZL GDW BW HW SWNNLBL UTA TLMLE BLH WRH UEL SUNNLA IEWPLZZWEZ. - BLWEBL BJMWH
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans16" VALUE="Those who go to college and never get out are called professors. - George Givot">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 16">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 16">
+
+
+<H2>Puzzle 17</H2>
+<TEXTAREA NAME="Puz17" WRAP=ON ROWS=3 COLS=72>NABMSNRI NLUOBMRBR NL ANOBUE YOXYXOENXL EX XLB'R ANREMLUB GOXI EDB YOXZSBI
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans17" VALUE="Idealism increases in direct proportion to one's distance from the problem">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 17">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 17">
+
+
+<H2>Puzzle 18</H2>
+<TEXTAREA NAME="Puz18" WRAP=ON ROWS=3 COLS=72>JCK PYV VZDZO EFDZ KT. EFDFVE KT FN MLZ RCONM MLFVE JCK PYV UC. - (PYVPZO TYMFZVM YVU ZI-OYFUZO) AJAZ YAGYUC
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans18" VALUE="You can never give up. Giving up is the worst thing you can do. (cancer patient and ex-raider) Lyle Almado">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 18">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 18">
+
+
+<H2>Puzzle 19</H2>
+<TEXTAREA NAME="Puz19" WRAP=ON ROWS=3 COLS=72>YGP ZXCYG XW YGP BYMYP, OE YGP FXEN CKE, OB YGP ZXCYG XW YGP OESOUOSKMFB AXVJXBOEN OY. - RXGE BYKMCY VOFF
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans19" VALUE="The worth of the state, in the long run, is the word of the individuals composing it. - John Stuart Mill">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 19">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 19">
+
+
+<H2>Puzzle 20</H2>
+<TEXTAREA NAME="Puz20" WRAP=ON ROWS=3 COLS=72>XC OR TMC OXCY, X'O CTS IBEG SKNS NJSXCL XI ITOGSKXCL ZTE N LETMC ONC ST UG YTXCL. - ISGWG OJDBGGC
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans20" VALUE="In my own mind, I'm not sure that acting is something for a grown man to be doing. - Steve McQueen">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 20">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 20">
+
+
+<H2>Puzzle 21</H2>
+<TEXTAREA NAME="Puz21" WRAP=ON ROWS=3 COLS=72>PZ PM ZXK SIFJ HL IC PCKDOKFPKCWKU SIC CHZ ZH VKAPKRK PC AEWJ. - BHMKOX WHCFIU
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans21" VALUE="It is the mark of an inexperienced man not to believe in luck. - Joseph Conrad">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 21">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 21">
+
+
+<H2>Puzzle 22</H2>
+<TEXTAREA NAME="Puz22" WRAP=ON ROWS=3 COLS=72>TZBX UKSXSUF UBHH LSKXE SO RCK WRYSDF, XZDE UBHH HCFXE SO PRKDSAO PSHWF. - NSHHE TSHLDK
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans22" VALUE="What critics call dirty in our movies, they call lusty in foreign films. - Billy Wilder">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 22">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 22">
+
+
+<H2>Puzzle 23</H2>
+<TEXTAREA NAME="Puz23" WRAP=ON ROWS=3 COLS=72>YENWMZBO: E UEJ IWB JMLMO UETMC GWM CEUM USCGETM BJNM. - MR IPJJ
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans23" VALUE="Bachelor: a man who never makes the same mistake once. - Ed Wynn">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 23">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 23">
+
+
+<H2>Puzzle 24</H2>
+<TEXTAREA NAME="Puz24" WRAP=ON ROWS=3 COLS=72>AUGSREGII DVGI ELR VE NGVEA IRULEA NKR VE ROG UVAOR KIG LP IRUGEARO
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans24" VALUE="Greatness lies not in being strong but in the right use of strength">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 24">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 24">
+
+
+<H2>Puzzle 25</H2>
+<TEXTAREA NAME="Puz25" WRAP=ON ROWS=3 COLS=72>RMK FCRM IS VIZAH DYKHKADK TV RMYIZJM RMK RMTDX SIYKVR IS VXKFRTDTVP. - JKIYJK UKCA ACRMCA
+</TEXTAREA>
+
+<INPUT TYPE=HIDDEN NAME="Ans25" VALUE="The path of sound credence is through the thick forest of skepticism. - George Jean Nathan">
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: 25">
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Answer: 25">
+
+
+<H2>Puzzle (New)</H2>
+<TEXTAREA NAME="PuzNew" WRAP=ON ROWS=3 COLS=72>
+</TEXTAREA>
+
+<BR>
+<INPUT TYPE=SUBMIT NAME="submitBut" VALUE="Crypto: New">
+
+
+<HR>
+
+<UL>
+<LI><A HREF="mailto:weyer@kagi.com">weyer@kagi.com</A> Steve Weyer
+<LI><A HREF="../cryptdoc.htm">http://members.bellatlantic.net/~sweyer/newton/cryptdoc.htm</A> Crypto page
+</UL>
+
+</FORM></BODY></HTML>
