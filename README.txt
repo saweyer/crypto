@@ -1,1 +1,1 @@
-http://communicrossings.com/html/newton/cryptdoc.htm
+https://communicrossings.com/html/newton/cryptdoc.htm
