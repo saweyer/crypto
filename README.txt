@@ -1,5 +1,7 @@
-Crypto 1.1 release, documentation and examples:
+Crypto 1.1 release (1998), documentation and examples:
 https://communicrossings.com/html/newton/cryptdoc.htm
 
-source (c. 1998) contains NTK project, layout and resource fork files
+source contains NTK project, layout and resource fork files
 -- thanks to Sylvain Pilet. http://message-pad.net
+
+released under MIT open source license
